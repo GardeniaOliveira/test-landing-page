@@ -11,13 +11,12 @@ body{
 
 header{
 width: 100%;
-height: 399px;
+height: 400px;
 position: relative;
 display: flex;
 align-items: center;
 flex-wrap: wrap;
 justify-content: center;
-
 }
 header p{
     color: white;
@@ -42,7 +41,7 @@ z-index: 10;
 }
 .header-clip-path{
     width: 100%;
-    height: 399px;
+    height: 400px;
 background: #707070;
 position: absolute;
 top: 0;
@@ -66,11 +65,14 @@ li{
     border: 1px solid #707070;
     border-radius: 4px;
 }
-
-.content-form{
+.align-section-center{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 80px;
+}
+section.content-form{
+
     gap: 60px;
     padding: 10px;
 }
@@ -86,7 +88,7 @@ li{
     padding-bottom: 10px;
     line-height: 1.2rem;
 }
-form{
+section.content-form form{
     display: flex;
     flex-direction: column;
 }
@@ -117,7 +119,7 @@ form label{
 }
 button{
 width: 340px;
-height: 39px;
+height: 40px;
 background: #707070;
 color: white;
 font-size: 16px;
@@ -128,22 +130,19 @@ opacity: 1;
 
 h3{
     font-size: 18px;
-    display: flex;
+     display: flex;
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 10px; 
 }
- h3::before, h3::after {
+  h3::before, h3::after {
     content: "";
     flex: 1 1;
     border-bottom: 1px solid #707070;
-    margin: auto;
-}
+    width: 30vw;
+}  
 
-section.products{
-margin-top: 80px;
-}
 .products-grid{
     display: flex;
     flex-wrap: wrap;
@@ -151,6 +150,7 @@ margin-top: 80px;
     justify-content: center;
     gap: 42px;
     margin-top: 60px;
+    max-width: 1165px;
 }
 .product-container{
     width: 200px;
@@ -160,7 +160,7 @@ margin-top: 80px;
     font-size: 14px;
     margin: 14px 0 10px 0;
 }
-section.products .product-description p:first-child{
+section.products .product-description p:nth-child(2){
     margin: 10px 0 14px 0;
 }
 
@@ -172,18 +172,66 @@ section.products img{
 .price{
     font-size: 16px;
     font-weight: bold;
+    color: #888888;
+    margin: 6px 0 6px 0;
     
 }
 section.products button{
     width: 200px;
     height: 30px;
+    margin-top: 10px;
+}
+section.products button.next-page-button, #btn-newslatter{
+    width: 260px;
+    height: 40px;
 }
 
-@media(min-width:1000px){
-     h3::before{
-    margin-left: 150px;
-} 
-h3::after{
-    margin-right: 160px;
-}  
+section.newsletter-container p:nth-child(2){
+ margin-top: 44px;
+ font-size: 16px;
 }
+form#newsletter{
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    gap: 40px;
+} 
+form#newsletter .align-input{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    gap: 40px;
+}
+form#newsletter .align-input div{
+display: flex;
+    flex-direction: column;
+
+}
+
+footer{
+    height: 290px;
+    margin-top: 72px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.footer-clip-path{
+    width: 100%;
+    height: 290px;
+    background: #707070;
+    position: absolute;
+    top: 0;
+    clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 100%);
+}
+.footer-content{
+    z-index: 10;
+    width: 260px;
+    color: white;
+    text-align: center;
+    }
