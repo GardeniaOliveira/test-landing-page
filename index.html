@@ -47,14 +47,20 @@
                     luctus commodo, odio ante suscipit libero, at mattis augue est vel metus.
                 </p>
             </div>
-            <form action="">
+            <form action="" id="form-subscribe">
 
-                <label for="">Seu nome:</label>
-                <input type="text">
-                <label for="">E-mail:</label>
-                <input type="email">
-                <label for="">CPF:</label>
-                <input type="number">
+                <label for="name">Seu nome:</label>
+                <input type="text" name="name" id="input-name" required>
+                <span class="error"></span>
+
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" id="input-email" required>
+                <span class="error"></span>
+
+                <label for="cpf">CPF:</label>
+                <input type="number" name="cpf" id="input-cpf" required>
+                <span class="error"></span>
+
                 <div class="radio">
                     <div class="gender-input-container">
                         <input type="radio" id="male" name="gender" value="male">
@@ -64,10 +70,11 @@
                         <input type="radio" id="female" name="gender" value="female">
                         <label for="female">Feminino</label>
                     </div>
-
+                    <span class="error"></span>
                 </div>
 
                 <button type="submit" id="btn-subscribe">Enviar</button>
+                <span class="success"></span>
             </form>
         </section>
 
