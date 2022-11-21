@@ -16,11 +16,18 @@ let price = document.querySelector('.price');
 let splitPrice = document.querySelector('.split-price');
 const btnBuy = document.querySelector('.btn-buy');
 const productsGrid = document.querySelector('.products-grid');
+const btnNextPage = document.querySelector('#btn-next-page')
+const formNewsletter = document.querySelector('#form-newsletter');
+const newsletterInputName = document.querySelector('#newsletter-input-name');
+const newsletterInputEmail = document.querySelector('#newsletter-input-email');
+const btnNewsletter = document.querySelector('#btn-newsletter')
+const sendNewslleterMessage = document.querySelector('#send-newslleter');
+
 
 
 btnSubscribe.addEventListener("click", (e) => {
     e.preventDefault();
-    validateMenu();
+    validateForm();
 
     if(formComplete === true){
         messageSuccess();
@@ -33,7 +40,7 @@ formSubscribe.addEventListener("focus", (e) => {
 
 })
 
-function validateMenu() {
+function validateForm() {
    if(inputName.value ===""){
     error[0].innerText = "Por favor, digite seu nome.";
     formSubscribe.name.focus;
@@ -44,7 +51,7 @@ function validateMenu() {
    else{
     error[0].innerText = "";
     inputName.style.border = "1px solid green";
-    let formComplete = true;
+    formComplete = true;
    }
 
    if( inputEmail.value ===""){
@@ -57,7 +64,7 @@ function validateMenu() {
    else{
     error[1].innerText = "";
     inputEmail.style.border = "1px solid green";
-    let formComplete = true;
+     formComplete = true;
    }
 
    if(inputCpf.value ===""){
@@ -70,7 +77,7 @@ function validateMenu() {
    else{
     error[2].innerText = "";
     inputCpf.style.border = "1px solid green";
-    let formComplete = true;
+    formComplete = true;
    }
    if(inputCpf.value.length !== 11){
     error[2].innerText = "O CPF precisa conter 11 dígitos.";
@@ -81,14 +88,14 @@ console.log(formSubscribe.cpf.value.length)
    }
    else{
     error[2].innerText = "";
-    let formComplete = true;
+  formComplete = true;
    }
     if(radioMale.checked === false && radioFemale.checked === false){
         error[3].innerText = "Escolha um sexo";
         formComplete = false; 
    }else{
     error[3].innerText = "";
-    let formComplete = true;
+    formComplete = true;
 
 
    }
@@ -104,8 +111,9 @@ function cleanForm() {
     inputCpf.value = "" ;
     radioMale.checked === false;
     radioFemale.checked === false;
+    newsletterInputName.value = "";
+    newsletterInputEmail.value = "";
 }
-
 
 
 function showProducts(){
@@ -143,3 +151,53 @@ showProducts()
         `
     }
   }
+
+  btnNextPage.addEventListener("click", (e) => {
+    e.preventDefault();
+    showProducts()
+
+})
+
+btnNewsletter.addEventListener("click", (e) => {
+    e.preventDefault();
+    validateFormNewsletter();
+    if(formComplete === true){
+        sendNewslleter();
+        cleanForm();
+    }
+    
+    
+
+})
+function validateFormNewsletter (){
+    if(newsletterInputName.value ===""){
+        error[4].innerText = "Por favor, digite seu nome.";
+        formNewsletter.name.focus;
+    
+        newsletterInputName.style.border = "1px solid red";
+        formComplete = false; 
+       }
+       else{
+        error[4].innerText = "";
+        newsletterInputName.style.border = "1px solid green";
+         formComplete = true;
+       }
+    
+       if( newsletterInputEmail.value ===""){
+        error[5].innerText = "Por favor, digite seu e-mail.";
+        formNewsletter.email.focus;
+    
+        newsletterInputEmail.style.border = "1px solid red";
+        formComplete = false; 
+       }
+       else{
+        error[5].innerText = "";
+        newsletterInputEmail.style.border = "1px solid green";
+         formComplete = true;
+       }
+
+}
+function sendNewslleter(){
+   sendNewslleterMessage.innerText = "Obrigada por assinar nossa newslleter. Verifique sua caixa de e-mail!";
+   
+}

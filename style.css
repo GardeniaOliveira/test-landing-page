@@ -107,7 +107,7 @@ height: 30px;
 background: #FFFFFF 0% 0% no-repeat padding-box;
 border: 1px solid #707070;
 opacity: 1;
-margin-bottom: 20px;
+margin-bottom: 10px;
 }
 .radio{
     display: flex;
@@ -130,7 +130,7 @@ form label{
     color: red;
     margin-bottom: 10px;
 }
-.success{
+.success, #send-newslleter{
     color: green;
     margin-top: 10px;
     font-weight: bold;
@@ -209,11 +209,11 @@ h3{
     height: 30px;
     margin-top: 10px;
 }
-section.products button.next-page-button, #btn-newslatter{
+ #btn-next-page, #btn-newsletter{
     width: 260px;
     height: 40px;
 }
-.next-page-button{
+#btn-next-page{
     margin-top: 44px;
 }
 section.newsletter-container p:nth-child(2){
@@ -221,7 +221,7 @@ section.newsletter-container p:nth-child(2){
  padding-left: 20px;
  font-size: 16px;
 }
-form#newsletter{
+#form-newsletter{
     width: 80vw;
     display: flex;
     flex-direction: column;
@@ -231,13 +231,13 @@ form#newsletter{
     align-items: center;
     gap: 40px;
 } 
-form#newsletter .align-input{
+#form-newsletter .align-input{
     display: flex;
     flex-wrap: wrap;
     margin-top: 40px;
     gap: 40px;
 }
-form#newsletter .align-input div{
+form#form-newsletter .align-input div{
 display: flex;
     flex-direction: column;
 
@@ -263,11 +263,12 @@ footer{
 .footer-content{
     z-index: 10;
     width: 260px;
+    margin-top: 50px;
     color: white;
     text-align: center;
     }
 
-    @media (max-width: 1000px) {
+    @media (max-width: 760px) {
         form input, #btn-subscribe {
             width: 90vw;
             }
@@ -300,5 +301,22 @@ footer{
             margin-top: 10px;
         }
         
-        
+        #form-newsletter .align-input {
+            gap: 5px;
+        }
+    }
+
+    @media only screen and (max-width: 900px) and (min-width: 768px){
+        .products-grid{
+            max-width: 600px;
+        }
+        .align-section-center, #form-newsletter .align-input {
+            justify-content: center;
+        }
+        form input, #btn-subscribe,#btn-next-page, #btn-newsletter {
+            width: 500px;
+        }
+        #form-newsletter .align-input {
+            gap: 5px;
+        }
     }

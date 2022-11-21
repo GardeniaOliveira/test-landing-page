@@ -102,7 +102,7 @@
                 </div> -->
 
             </div>
-            <button class="next-page-button">Ainda mais produtos aqui!</button>
+            <button id="btn-next-page">Ainda mais produtos aqui!</button>
         </section>
 
         <section class="newsletter-container align-section-center">
@@ -112,20 +112,21 @@
             </div>
             <p>Quer que seus amigos também ganhem a lista personalizada deles? Preencha agora!</p>
 
-            <form id="newsletter" action="">
+            <form id="form-newsletter" action="">
                 <div class="align-input">
                     <div>
-                        <label for="">Seu nome:</label>
-                        <input type="text">
+                        <label for="name">Seu nome:</label>
+                        <input type="text" name="name" id="newsletter-input-name" required>
+                        <span class="error"></span>
                     </div>
                     <div>
-                        <label for="">E-mail:</label>
-                        <input type="email">
+                        <label for="email">E-mail:</label>
+                        <input type="email" name="email" id="newsletter-input-email" required>
+                        <span class="error"></span>
                     </div>
-
                 </div>
-
-                <button type="submit" id="btn-newslatter">Enviar agora</button>
+                <button type="submit" id="btn-newsletter">Enviar agora</button>
+                <span id="send-newslleter"></span>
             </form>
         </section>
     </main>
