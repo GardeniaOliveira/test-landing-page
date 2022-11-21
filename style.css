@@ -104,10 +104,10 @@ section.content-form form{
 form input{
 width: 340px;
 height: 30px;
-background: #FFFFFF 0% 0% no-repeat padding-box;
 border: 1px solid #707070;
 opacity: 1;
 margin-bottom: 10px;
+padding: 10px;
 }
 .radio{
     display: flex;
